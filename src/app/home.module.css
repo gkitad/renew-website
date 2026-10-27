@@ -52,12 +52,15 @@
     margin-inline: 0 calc(-1 * var(--gutter));
   }
   .heroMedia figcaption {
-    padding-inline: 0;
+    padding-inline: 0 var(--gutter);
   }
 }
 @media (min-width: 90rem) {
   .heroMedia {
     margin-right: 0;
+  }
+  .heroMedia figcaption {
+    padding-inline: 0;
   }
 }
 
