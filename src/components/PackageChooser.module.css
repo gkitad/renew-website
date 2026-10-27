@@ -1,0 +1,244 @@
+.chooser {
+  display: grid;
+  gap: var(--s-7);
+}
+.sizes {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.legend {
+  margin-bottom: var(--s-3);
+  color: var(--stone-600);
+}
+:global(.on-ink) .legend {
+  color: var(--on-ink-muted);
+}
+.sizeOptions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line-strong);
+}
+:global(.on-ink) .sizeOptions {
+  border-color: var(--line-ink-strong);
+}
+.size {
+  position: relative;
+  cursor: pointer;
+}
+.size + .size {
+  border-left: 1px solid var(--line-strong);
+}
+:global(.on-ink) .size + .size {
+  border-left-color: var(--line-ink-strong);
+}
+.size input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.sizeBox {
+  display: grid;
+  gap: 0.15rem;
+  height: 100%;
+  min-height: 3.5rem;
+  padding: 0.75rem 0.9rem;
+  transition: background-color var(--dur-2) var(--ease), color var(--dur-2) var(--ease);
+}
+.sizeLabel {
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+.sizeDetail {
+  font-size: 0.78rem;
+  color: var(--stone-600);
+}
+:global(.on-ink) .sizeDetail {
+  color: var(--on-ink-muted);
+}
+.size input:checked + .sizeBox {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+:global(.on-ink) .size input:checked + .sizeBox {
+  background: var(--paper);
+  color: var(--ink);
+}
+.size input:checked + .sizeBox .sizeDetail {
+  color: inherit;
+  opacity: 0.8;
+}
+.size input:focus-visible + .sizeBox {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+:global(.on-ink) .size input:focus-visible + .sizeBox {
+  outline-color: var(--accent-bright);
+}
+@media (max-width: 39.99rem) {
+  .sizeDetail {
+    display: none;
+  }
+  .sizeLabel {
+    font-size: 0.82rem;
+  }
+  .sizeBox {
+    padding: 0.7rem 0.6rem;
+    align-content: center;
+  }
+}
+
+/* Price switching: sedan by default, others via :has() */
+.amount {
+  display: none;
+}
+.amount[data-size="sedan"] {
+  display: inline;
+}
+.chooser:has(input[value="suv"]:checked) .amount[data-size="sedan"],
+.chooser:has(input[value="large"]:checked) .amount[data-size="sedan"] {
+  display: none;
+}
+.chooser:has(input[value="suv"]:checked) .amount[data-size="suv"],
+.chooser:has(input[value="large"]:checked) .amount[data-size="large"] {
+  display: inline;
+}
+
+.packages {
+  display: grid;
+  gap: var(--s-6) var(--col-gap);
+}
+@media (min-width: 60rem) {
+  .packages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.pkg {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--s-5);
+  padding: var(--s-6) var(--s-5);
+  border-top: 1px solid var(--line-strong);
+  position: relative;
+}
+:global(.on-ink) .pkg {
+  border-top-color: var(--line-ink-strong);
+}
+.popular {
+  border-top: 2px solid var(--accent);
+  background: rgb(21 20 18 / 0.04);
+}
+:global(.on-ink) .popular {
+  border-top-color: var(--accent-bright);
+  background: rgb(243 240 234 / 0.04);
+}
+.head {
+  display: grid;
+  gap: var(--s-2);
+}
+.n {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+:global(.on-ink) .n {
+  color: var(--accent-bright);
+}
+.badge {
+  padding: 0.25rem 0.55rem;
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 115;
+}
+:global(.on-ink) .badge {
+  background: var(--accent-bright);
+  color: var(--ink);
+}
+.name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+.tagline {
+  font-size: var(--fs-small);
+  color: var(--stone-600);
+}
+:global(.on-ink) .tagline {
+  color: var(--on-ink-muted);
+}
+.price {
+  display: grid;
+  gap: 0.25rem;
+  padding-block: var(--s-4);
+  border-block: 1px solid var(--line);
+}
+:global(.on-ink) .price {
+  border-color: var(--line-ink);
+}
+.price :global(.micro) {
+  color: var(--stone-600);
+}
+:global(.on-ink) .price :global(.micro) {
+  color: var(--on-ink-muted);
+}
+.amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 2rem + 2vw, 3.5rem);
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+.includes {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+  font-size: var(--fs-small);
+}
+.prefix {
+  font-weight: 600;
+}
+.includes ul {
+  display: grid;
+  gap: 0.55rem;
+}
+.includes li {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  line-height: 1.45;
+}
+.includes li::before {
+  content: "";
+  width: 0.7rem;
+  height: 1px;
+  margin-top: 0.7em;
+  background: var(--accent);
+}
+:global(.on-ink) .includes li::before {
+  background: var(--accent-bright);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  padding-top: var(--s-3);
+}
+.book {
+  flex: 1 1 auto;
+}
+/* The popular package's solid button must stand out on dark sections too */
+:global(.on-ink) .popular .book {
+  --btn-bg: var(--paper);
+  --btn-fg: var(--ink);
+}

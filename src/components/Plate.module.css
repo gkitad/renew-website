@@ -1,0 +1,74 @@
+.plate {
+  display: grid;
+  gap: 0.7rem;
+  min-width: 0;
+}
+.frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink-2);
+}
+.img {
+  object-fit: cover;
+  transition: transform var(--dur-3) var(--ease);
+}
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 112;
+  color: var(--stone-600);
+}
+:global(.on-ink) .caption {
+  color: var(--on-ink-muted);
+}
+.sample {
+  margin-left: auto;
+}
+
+/* The inspection light: a thin warm line with a soft glow that crosses once. */
+.sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 44%,
+    rgb(255 246 220 / 0.08) 47%,
+    rgb(212 178 90 / 0.6) 49.6%,
+    rgb(255 245 235 / 0.9) 50%,
+    rgb(212 178 90 / 0.6) 50.4%,
+    rgb(255 246 220 / 0.08) 53%,
+    transparent 56%,
+    transparent 100%
+  );
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sweep {
+    animation: sweep var(--dur-sweep) var(--ease) 500ms 1 both;
+  }
+}
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    background-position: 100% 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background-position: 0% 0;
+  }
+}

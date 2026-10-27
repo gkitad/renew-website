@@ -1,0 +1,58 @@
+.list {
+  border-top: 1px solid var(--line-strong);
+}
+:global(.on-ink) .list {
+  border-top-color: var(--line-ink-strong);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s-4);
+  align-items: baseline;
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--line);
+}
+:global(.on-ink) .row {
+  border-bottom-color: var(--line-ink);
+}
+.text {
+  display: grid;
+  gap: 0.3rem;
+}
+.name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2.1rem);
+  line-height: 1.1;
+}
+.note {
+  color: var(--accent);
+}
+:global(.on-ink) .note {
+  color: var(--accent-bright);
+}
+.desc {
+  max-width: 52ch;
+  font-size: var(--fs-small);
+  color: var(--stone-600);
+}
+:global(.on-ink) .desc {
+  color: var(--on-ink-muted);
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.price :global(.micro) {
+  color: var(--stone-600);
+}
+:global(.on-ink) .price :global(.micro) {
+  color: var(--on-ink-muted);
+}
+.amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.4rem + 1vw, 2.4rem);
+  line-height: 1;
+}

@@ -1,0 +1,313 @@
+/* ---------- Hero ---------- */
+.hero {
+  padding-top: clamp(2rem, 1rem + 4vw, 4.5rem);
+}
+.heroGrid {
+  display: grid;
+  gap: var(--s-7);
+}
+.heroCopy {
+  display: grid;
+  gap: var(--s-5);
+  justify-items: start;
+  align-content: end;
+}
+.heroLead {
+  max-width: 34ch;
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4) var(--s-6);
+  margin-top: var(--s-2);
+}
+.heroMeta {
+  font-size: var(--fs-small);
+  color: var(--stone-600);
+}
+.heroMeta a {
+  color: var(--ink);
+  font-weight: 560;
+}
+.heroMedia {
+  margin-inline: calc(-1 * var(--gutter));
+}
+.heroMedia figcaption {
+  padding-inline: var(--gutter);
+}
+
+@media (min-width: 64rem) {
+  .heroGrid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--col-gap);
+    align-items: end;
+  }
+  .heroCopy {
+    grid-column: 1 / span 7;
+    padding-bottom: var(--s-8);
+  }
+  .heroMedia {
+    grid-column: 8 / -1;
+    margin-inline: 0 calc(-1 * var(--gutter));
+  }
+  .heroMedia figcaption {
+    padding-inline: 0;
+  }
+}
+@media (min-width: 90rem) {
+  .heroMedia {
+    margin-right: 0;
+  }
+}
+
+/* Disciplines strip — a numbered index under the hero */
+.disciplines {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(2.5rem, 2rem + 3vw, 5rem);
+  border-top: 1px solid var(--ink);
+}
+@media (min-width: 48rem) {
+  .disciplines {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.disciplines li {
+  border-bottom: 1px solid var(--line);
+}
+.disciplines li + li {
+  border-left: 1px solid var(--line);
+}
+@media (max-width: 47.99rem) {
+  .disciplines li:nth-child(3) {
+    border-left: 0;
+  }
+}
+.discipline {
+  display: grid;
+  gap: 0.2rem;
+  height: 100%;
+  padding: var(--s-4) var(--s-4) var(--s-5);
+  text-decoration: none;
+  transition: background-color var(--dur-2) var(--ease);
+}
+.discipline:hover {
+  background: var(--paper-2);
+}
+.dNum {
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--s-2);
+}
+.dName {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.1;
+}
+.dLine {
+  font-size: 0.85rem;
+  color: var(--stone-600);
+}
+
+/* ---------- Approach ---------- */
+.approach {
+  display: grid;
+  gap: var(--s-6);
+}
+.statement {
+  max-width: 24ch;
+}
+@media (min-width: 64rem) {
+  .approach {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--col-gap);
+  }
+  .approach > :first-child {
+    grid-column: 1 / span 3;
+    padding-top: 1.1rem;
+    align-self: start;
+  }
+  .statement {
+    grid-column: 4 / -1;
+    max-width: 22ch;
+  }
+  .principles {
+    grid-column: 4 / -1;
+  }
+}
+.principles {
+  display: grid;
+  gap: var(--s-6) var(--col-gap);
+  margin-top: var(--s-6);
+}
+@media (min-width: 48rem) {
+  .principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.principles li {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line-strong);
+}
+.pNum {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+/* ---------- Shared section head ---------- */
+.sectionHead {
+  display: grid;
+  gap: var(--s-4);
+  max-width: 44rem;
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+.sectionHead > p:last-child:not(:first-child) {
+  max-width: 50ch;
+}
+
+/* ---------- Services ---------- */
+.servicesFoot {
+  margin-top: var(--s-6);
+}
+
+/* ---------- Full-bleed plate ---------- */
+.bleed {
+  position: relative;
+  overflow: hidden;
+}
+.bleedPlate > div {
+  aspect-ratio: 4 / 5 !important;
+}
+@media (min-width: 40rem) {
+  .bleedPlate > div {
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+@media (min-width: 80rem) {
+  .bleedPlate > div {
+    aspect-ratio: 21 / 9 !important;
+  }
+}
+.bleed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(21 20 18 / 0) 35%, rgb(21 20 18 / 0.85) 100%);
+  pointer-events: none;
+}
+.bleedCopy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: grid;
+  gap: var(--s-4);
+  padding-bottom: clamp(1.5rem, 1rem + 3vw, 4rem);
+}
+.bleedLine {
+  max-width: 20ch;
+}
+.bleedCap {
+  color: var(--on-ink-muted);
+}
+
+/* ---------- Compare ---------- */
+.compare {
+  display: grid;
+  gap: var(--s-7);
+}
+.compareHead {
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+@media (min-width: 64rem) {
+  .compare {
+    grid-template-columns: 4fr 8fr;
+    column-gap: calc(var(--col-gap) * 2);
+  }
+  .compareHead {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+    align-self: start;
+  }
+}
+
+/* ---------- Process ---------- */
+.processFoot {
+  margin-top: var(--s-7);
+}
+
+/* ---------- Work ---------- */
+.work {
+  display: grid;
+  gap: var(--s-6) var(--col-gap);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.workA,
+.workCopy {
+  grid-column: 1 / -1;
+}
+.workCopy {
+  display: grid;
+  gap: var(--s-4);
+  justify-items: start;
+  align-content: start;
+}
+.workCopy p {
+  max-width: 44ch;
+}
+@media (min-width: 64rem) {
+  .work {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+  }
+  .workA {
+    grid-column: 1 / span 6;
+    grid-row: 1 / span 2;
+  }
+  .workCopy {
+    grid-column: 8 / -1;
+    grid-row: 1;
+    align-self: end;
+    padding-bottom: var(--s-6);
+  }
+  .workB {
+    grid-column: 8 / span 2;
+    grid-row: 2;
+    align-self: start;
+  }
+  .workC {
+    grid-column: 10 / span 3;
+    grid-row: 2;
+    margin-top: var(--s-8);
+  }
+}
+
+/* ---------- Reviews ---------- */
+.reviews {
+  display: grid;
+  gap: var(--s-7) var(--col-gap);
+  margin-top: var(--s-6);
+}
+@media (min-width: 48rem) {
+  .reviews {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.reviews li {
+  display: grid;
+  gap: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line-strong);
+}
+.reviews blockquote {
+  margin: 0;
+}

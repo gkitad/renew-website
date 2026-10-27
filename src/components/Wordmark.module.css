@@ -1,0 +1,46 @@
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.paper {
+  color: var(--on-ink);
+}
+.primary {
+  position: relative;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+  padding-right: 0.55rem;
+  transform: translateY(-1px);
+}
+.spark {
+  position: absolute;
+  top: -0.05rem;
+  right: -0.15rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  fill: var(--accent);
+}
+.paper .spark {
+  fill: var(--accent-bright);
+}
+.secondary {
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--line-strong);
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 125;
+  max-width: 7.5rem;
+  white-space: normal;
+}
+.paper .secondary {
+  border-left-color: var(--line-ink-strong);
+}

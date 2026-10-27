@@ -1,0 +1,33 @@
+.band {
+  padding-block: var(--section);
+  position: relative;
+}
+.grid {
+  display: grid;
+  gap: var(--s-7);
+  align-items: center;
+}
+.copy {
+  display: grid;
+  gap: var(--s-5);
+  justify-items: start;
+}
+.body {
+  max-width: 46ch;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4) var(--s-6);
+  margin-top: var(--s-2);
+}
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: 6fr 5fr;
+    gap: var(--col-gap);
+  }
+  .media {
+    grid-column: 2;
+  }
+}

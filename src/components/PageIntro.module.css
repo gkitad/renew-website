@@ -1,0 +1,27 @@
+.intro {
+  padding-block: clamp(3rem, 2rem + 5vw, 7rem) clamp(3rem, 2rem + 4vw, 6rem);
+}
+.grid {
+  display: grid;
+  gap: var(--s-7);
+}
+.copy {
+  display: grid;
+  gap: var(--s-5);
+  align-content: end;
+  justify-items: start;
+}
+.lead {
+  color: var(--ink);
+  max-width: 48ch;
+}
+@media (min-width: 64rem) {
+  .withImage .grid {
+    grid-template-columns: 7fr 4fr;
+    column-gap: calc(var(--col-gap) * 2);
+    align-items: end;
+  }
+  .copy {
+    padding-bottom: var(--s-6);
+  }
+}

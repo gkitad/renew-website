@@ -1,0 +1,23 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.5rem var(--gutter);
+  background: var(--ink);
+  color: var(--on-ink-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  text-align: center;
+}
+.bar strong {
+  color: var(--on-ink);
+  font-weight: 600;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent-bright);
+}
