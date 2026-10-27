@@ -53,7 +53,7 @@ export const site = {
     description:
       "Mobile car detailing in North Austin. Express, interior and full detail packages priced by vehicle size — we come to you. Book by text or Instagram DM.",
     /** Overridden by NEXT_PUBLIC_SITE_URL at build time. */
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://renew-website-three.vercel.app",
     locale: "en_US",
   },
 
