@@ -7,7 +7,7 @@ export function PreviewBar() {
     <div className={styles.bar} role="note">
       <span className={styles.dot} aria-hidden="true" />
       <p>
-        <strong>Site under construction.</strong> Photos shown are licensed sample images, not our own work — our gallery is
+        <strong>Site under construction.</strong> Photos shown are licensed sample images, not our own work. Our gallery is
         coming soon.
       </p>
     </div>

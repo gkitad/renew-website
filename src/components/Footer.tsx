@@ -3,6 +3,7 @@ import { nav, primaryCta, site } from "@/content/site";
 import { visibleServices } from "@/lib/content";
 import { Wordmark } from "./Wordmark";
 import { Pending } from "./Pending";
+import { Hours } from "./Hours";
 import { Arrow } from "./Icons";
 import styles from "./Footer.module.css";
 
@@ -66,12 +67,13 @@ export function Footer() {
               </li>
             )}
             <li>{serviceArea ? <span>Mobile · {serviceArea}</span> : <Pending label="Service area" />}</li>
-            {contact.hours?.map((h) => (
-              <li key={h.days} className="muted">
-                {h.days}: {h.time}
-              </li>
-            ))}
+
           </ul>
+        </div>
+
+        <div className={styles.col}>
+          <h2 className={`micro ${styles.heading}`}>Hours</h2>
+          <Hours compact />
         </div>
       </div>
 

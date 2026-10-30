@@ -201,7 +201,7 @@ export function EstimateForm({ services, addOns }: Props) {
           <p className={styles.summaryTitle}>Your request was not sent.</p>
           <p>
             {errorMessage} Your details are still filled in below
-            {site.contact.phone ? <> — or text us directly at {site.contact.phone}</> : null}.
+            {site.contact.phone ? <>, or text us directly at {site.contact.phone}</> : null}.
           </p>
         </div>
       )}
@@ -254,10 +254,10 @@ export function EstimateForm({ services, addOns }: Props) {
         <div className="field">
           <label htmlFor={id("service")}>Package</label>
           <select id={id("service")} name="service" className="input" defaultValue={initialService}>
-            <option value="">Not sure — recommend one</option>
+            <option value="">Not sure, recommend one</option>
             {services.map((s) => (
               <option key={s.slug} value={s.slug}>
-                {s.name} — from {usd(Math.min(...Object.values(s.prices)))}
+                {s.name}: from {usd(Math.min(...Object.values(s.prices)))}
               </option>
             ))}
           </select>

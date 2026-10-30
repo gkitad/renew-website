@@ -19,7 +19,6 @@
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-variation-settings: "wdth" 112;
   color: var(--stone-600);
 }
 :global(.on-ink) .caption {

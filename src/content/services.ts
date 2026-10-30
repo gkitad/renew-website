@@ -1,12 +1,12 @@
 import type { AssetKey } from "./assets";
 
 /**
- * SERVICE MENU — Renew's packages and add-ons, from the published price sheet.
+ * SERVICE MENU: Renew's packages and add-ons, from the published price sheet.
  * Edit here; the packages page, detail pages, home page, booking form and
  * sitemap all read from these lists.
  *
  * Prices are "starting at" figures by vehicle size. `includes` lists are the
- * business's own package contents — keep them in sync with the price sheet.
+ * business's own package contents: keep them in sync with the price sheet.
  */
 
 export type VehicleSize = "sedan" | "suv" | "large";
@@ -43,6 +43,46 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "interior-detail",
+    name: "Interior Detail",
+    tagline: "Deep interior cleaning + restoration",
+    short: "Deep vacuum, seats and carpets deep cleaned, every surface cleaned and conditioned.",
+    summary:
+      "A deep clean of the whole cabin, trunk to front. Seats and carpets are deep cleaned, plastic and leather surfaces are cleaned and conditioned, and the interior glass is left clear.",
+    prices: { sedan: 170, suv: 200, large: 220 },
+    includes: [
+      "Deep vacuuming",
+      "Seats & carpets deep cleaned",
+      "Detailed wipe-down, trunk to front",
+      "Plastic & leather surfaces cleaned and conditioned",
+      "Door jambs cleaned",
+      "Interior glass cleaned",
+    ],
+    suitedFor: [
+      "Daily drivers, family cars and road-trip vehicles",
+      "Stained seats or carpets, crumbs and built-up grime",
+      "Getting a car ready to sell, or one you just bought",
+    ],
+    steps: [
+      { title: "Deep vacuum", body: "Seats, carpets, mats, crevices and the trunk." },
+      { title: "Deep clean", body: "Seats and carpets deep cleaned; detailed wipe-down from trunk to front." },
+      { title: "Condition", body: "Plastic and leather conditioned, door jambs and interior glass finished." },
+    ],
+    considerations: [
+      "Prices are starting points by vehicle size; the final quote depends on the vehicle’s condition.",
+      "Some stains are permanent. We’ll tell you what’s realistic.",
+      "Deep-cleaned fabric can need a little time to dry fully.",
+      "Pet hair removal and odor elimination (ozone) are available as add-ons.",
+      "Please take personal items out before the appointment.",
+    ],
+    image: "interiorLeather",
+    detailImage: "steeringCloth",
+    /** Featured: listed first and marked "Most popular" everywhere packages appear. */
+    popular: true,
+    related: ["full-detail", "express-in-and-out"],
+    confirmed: true,
+  },
+  {
     slug: "express-in-and-out",
     name: "Express In & Out",
     tagline: "Perfect for maintenance",
@@ -72,51 +112,12 @@ export const services: Service[] = [
     ],
     considerations: [
       "Prices are starting points by vehicle size; the final quote depends on the vehicle’s condition.",
-      "The included paint protection is short-term — about two weeks.",
+      "The included paint protection is short-term, about two weeks.",
       "Heavy pet hair or odors are handled with add-ons.",
     ],
     image: "handWash",
     detailImage: "foamFront",
     related: ["interior-detail", "full-detail"],
-    confirmed: true,
-  },
-  {
-    slug: "interior-detail",
-    name: "Interior Detail",
-    tagline: "Deep interior cleaning + restoration",
-    short: "Deep vacuum, seats and carpets deep cleaned, every surface cleaned and conditioned.",
-    summary:
-      "A deep clean of the whole cabin, trunk to front. Seats and carpets are deep cleaned, plastic and leather surfaces are cleaned and conditioned, and the interior glass is left clear.",
-    prices: { sedan: 170, suv: 200, large: 220 },
-    includes: [
-      "Deep vacuuming",
-      "Seats & carpets deep cleaned",
-      "Detailed wipe-down — trunk to front",
-      "Plastic & leather surfaces cleaned and conditioned",
-      "Door jambs cleaned",
-      "Interior glass cleaned",
-    ],
-    suitedFor: [
-      "Daily drivers, family cars and road-trip vehicles",
-      "Stained seats or carpets, crumbs and built-up grime",
-      "Getting a car ready to sell — or just bought",
-    ],
-    steps: [
-      { title: "Deep vacuum", body: "Seats, carpets, mats, crevices and the trunk." },
-      { title: "Deep clean", body: "Seats and carpets deep cleaned; detailed wipe-down from trunk to front." },
-      { title: "Condition", body: "Plastic and leather conditioned, door jambs and interior glass finished." },
-    ],
-    considerations: [
-      "Prices are starting points by vehicle size; the final quote depends on the vehicle’s condition.",
-      "Some stains are permanent — we’ll tell you what’s realistic.",
-      "Deep-cleaned fabric can need a little time to dry fully.",
-      "Pet hair removal and odor elimination (ozone) are available as add-ons.",
-      "Please take personal items out before the appointment.",
-    ],
-    image: "interiorLeather",
-    detailImage: "steeringCloth",
-    popular: true,
-    related: ["full-detail", "express-in-and-out"],
     confirmed: true,
   },
   {

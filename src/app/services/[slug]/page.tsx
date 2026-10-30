@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const sv = getService(slug);
   if (!sv) return {};
   return pageMetadata({
-    title: `${sv.name} — from ${usd(fromPrice(sv))}`,
+    title: `${sv.name} from ${usd(fromPrice(sv))}`,
     description: `${sv.short} Mobile detailing in North Austin, priced by vehicle size from ${usd(fromPrice(sv))}.`,
     path: `/services/${sv.slug}/`,
     image: `${assets[sv.image].src}?w=1200&h=630&fit=crop&q=70&auto=format`,

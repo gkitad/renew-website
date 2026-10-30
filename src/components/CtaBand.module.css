@@ -31,3 +31,12 @@
     grid-column: 2;
   }
 }
+.hours {
+  display: grid;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--line-ink);
+  width: 100%;
+  max-width: 26rem;
+}

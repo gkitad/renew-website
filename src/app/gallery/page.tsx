@@ -12,7 +12,7 @@ import s from "../inner.module.css";
 
 export const metadata = pageMetadata({
   title: "Our work",
-  description: "Renew project gallery — real cars from around North Austin, before and after. Coming soon.",
+  description: "Renew project gallery: real cars from around North Austin, before and after. Coming soon.",
   path: "/gallery/",
 });
 
@@ -31,7 +31,7 @@ export default function GalleryPage() {
         lead={
           hasProjects
             ? "Selected projects, photographed the same way before and after."
-            : "Our project gallery is coming soon — real cars from around North Austin, shown as they really are, before and after. Until then, our latest work is on Instagram."
+            : "Our project gallery is coming soon, with real cars from around North Austin shown as they really are, before and after. Until then, our latest work is on Instagram."
         }
       />
 

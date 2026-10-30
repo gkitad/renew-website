@@ -118,7 +118,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
             <div className={styles.foot}>
               <p>
                 <span>{current.caption}</span>
-                {a.sample && <span className="muted"> · Sample photography{a.credit ? ` — ${a.credit}` : ""}</span>}
+                {a.sample && <span className="muted"> · Sample photography{a.credit ? `, ${a.credit}` : ""}</span>}
               </p>
               <div className={styles.nav}>
                 <button type="button" className={styles.iconBtn} onClick={() => step(-1)} aria-label="Previous image">

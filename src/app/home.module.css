@@ -28,7 +28,7 @@
 }
 .heroMeta a {
   color: var(--ink);
-  font-weight: 560;
+  font-weight: 600;
 }
 .heroMedia {
   margin-inline: calc(-1 * var(--gutter));
@@ -64,7 +64,7 @@
   }
 }
 
-/* Disciplines strip — a numbered index under the hero */
+/* Disciplines strip: a numbered index under the hero */
 .disciplines {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -106,6 +106,8 @@
 }
 .dName {
   font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.025em;
   font-size: clamp(1.45rem, 1.2rem + 1vw, 2rem);
   line-height: 1.1;
 }
@@ -313,4 +315,25 @@
 }
 .reviews blockquote {
   margin: 0;
+}
+
+/* Dark-section variants */
+:global(.on-ink) .principles li {
+  border-top-color: var(--line-ink-strong);
+}
+:global(.on-ink) .pNum {
+  color: var(--accent-bright);
+}
+.dBadge {
+  display: inline-block;
+  margin-left: 0.75rem;
+  padding: 0.2rem 0.45rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  vertical-align: 0.1em;
 }

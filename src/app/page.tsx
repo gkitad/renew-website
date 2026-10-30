@@ -75,7 +75,10 @@ export default function Home() {
             {services.map((s, i) => (
               <li key={s.slug}>
                 <Link href={`/services/${s.slug}/`} className={styles.discipline}>
-                  <span className={`num ${styles.dNum}`}>{pad(i + 1)}</span>
+                  <span className={`num ${styles.dNum}`}>
+                    {pad(i + 1)}
+                    {s.popular && <span className={styles.dBadge}>Most popular</span>}
+                  </span>
                   <span className={styles.dName}>{s.name}</span>
                   <span className={styles.dLine}>From {usd(fromPrice(s))}</span>
                 </Link>
@@ -93,13 +96,13 @@ export default function Home() {
       </section>
 
       {/* ---------- Approach statement ---------- */}
-      <section className="section" aria-labelledby="approach-title">
+      <section className="section on-ink" aria-labelledby="approach-title">
         <div className={`wrap ${styles.approach}`}>
           <p className="label" data-reveal>
             Approach
           </p>
           <h2 id="approach-title" className={`h2 ${styles.statement}`} data-reveal>
-            A detail isn’t judged from ten feet away. It’s judged up close — in the door jambs, the seat rails, the
+            A detail isn’t judged from ten feet away. It’s judged up close: in the door jambs, the seat rails, the
             wheel barrels. That’s where <em>we start.</em>
           </h2>
           <ol role="list" className={styles.principles}>
@@ -115,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* ---------- Packages (dark booth) ---------- */}
-      <section className={`on-ink section ${styles.services}`} aria-labelledby="services-title">
+      <section className={`section ${styles.services}`} aria-labelledby="services-title">
         <div className="wrap">
           <div className={styles.sectionHead}>
             <p className="label">Packages</p>
@@ -123,7 +126,7 @@ export default function Home() {
               Choose your <em>detail.</em>
             </h2>
             <p className="muted">
-              Three packages, priced by vehicle size. Pick your size to see starting prices — the final price depends on
+              Three packages, priced by vehicle size. Pick your size to see starting prices. The final price depends on
               the car’s condition and any add-ons.
             </p>
           </div>
@@ -167,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* ---------- Process preview ---------- */}
-      <section className="section on-stone" aria-labelledby="process-title">
+      <section className="section on-ink" aria-labelledby="process-title">
         <div className="wrap">
           <div className={styles.sectionHead}>
             <p className="label">How it works</p>
@@ -196,7 +199,7 @@ export default function Home() {
               Evidence, <em>not adjectives.</em>
             </h2>
             <p className="muted">
-              Our project gallery is coming soon — real cars from around North Austin, before and after. Until then, the
+              Our project gallery is coming soon: real cars from around North Austin, before and after. Until then, the
               images on this site are licensed samples that show the kind of work involved.
               {instagram && (
                 <>

@@ -23,7 +23,7 @@ export async function submitBooking(
     const res = await fetchImpl(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...payload, addOns: payload.addOns.join(", "), message, _subject: `Booking request — ${payload.vehicle}` }),
+      body: JSON.stringify({ ...payload, addOns: payload.addOns.join(", "), message, _subject: `Booking request: ${payload.vehicle}` }),
       signal: controller.signal,
     });
     if (res.ok) return { status: "sent" };

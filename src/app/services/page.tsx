@@ -12,7 +12,7 @@ import s from "../inner.module.css";
 export const metadata = pageMetadata({
   title: "Packages & prices",
   description:
-    "Express In & Out from $120, Interior Detail from $170, Full Detail from $220 — priced by vehicle size. Add-ons from $50. Mobile detailing in North Austin.",
+    "Express In & Out from $120, Interior Detail from $170, Full Detail from $220, priced by vehicle size. Add-ons from $50. Mobile detailing in North Austin.",
   path: "/services/",
 });
 
@@ -39,7 +39,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="add-ons" className="section on-stone" aria-labelledby="addons-title">
+      <section id="add-ons" className="section on-ink" aria-labelledby="addons-title">
         <div className={`wrap ${s.split}`}>
           <div className={s.splitHead}>
             <p className="label">Add-ons</p>
@@ -63,15 +63,15 @@ export default function ServicesPage() {
           <dl className={s.defs2}>
             <div>
               <dt className="h3">It just needs a proper clean</dt>
-              <dd className="muted">Express In & Out — quick interior refresh and a complete exterior wash. Ideal for regular upkeep.</dd>
+              <dd className="muted">Express In & Out: a quick interior refresh and a complete exterior wash. Ideal for regular upkeep.</dd>
             </div>
             <div>
               <dt className="h3">The inside is the problem</dt>
-              <dd className="muted">Interior Detail — seats and carpets deep cleaned, every surface cleaned and conditioned, trunk to front.</dd>
+              <dd className="muted">Interior Detail: seats and carpets deep cleaned, every surface cleaned and conditioned, trunk to front.</dd>
             </div>
             <div>
               <dt className="h3">It needs everything</dt>
-              <dd className="muted">Full Detail — the Interior Detail plus a careful exterior, wheels, trim and four months of paint protection.</dd>
+              <dd className="muted">Full Detail: the Interior Detail plus a careful exterior, wheels, trim and four months of paint protection.</dd>
             </div>
           </dl>
           <p>

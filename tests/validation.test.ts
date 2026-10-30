@@ -22,12 +22,17 @@ const catalog = { services, addOns, sizes: vehicleSizes, brand: "Renew" };
 describe("price data", () => {
   it("matches the published price sheet", () => {
     expect(services.map((s) => [s.slug, s.prices])).toEqual([
-      ["express-in-and-out", { sedan: 120, suv: 150, large: 180 }],
       ["interior-detail", { sedan: 170, suv: 200, large: 220 }],
+      ["express-in-and-out", { sedan: 120, suv: 150, large: 180 }],
       ["full-detail", { sedan: 220, suv: 250, large: 300 }],
     ]);
     expect(addOns.map((a) => a.price)).toEqual([50, 90, 80, 50, 50]);
     expect(fromPrice(services[2])).toBe(220);
+  });
+
+  it("features Interior Detail first as the only most-popular package", () => {
+    expect(services[0].slug).toBe("interior-detail");
+    expect(services.filter((s) => s.popular).map((s) => s.slug)).toEqual(["interior-detail"]);
   });
 });
 
@@ -81,7 +86,7 @@ describe("composeMessage", () => {
   });
 
   it("asks for a recommendation when no package is chosen", () => {
-    expect(composeMessage({ ...valid, service: "", addOns: [] }, catalog)).toContain("Package: Not sure — please recommend one");
+    expect(composeMessage({ ...valid, service: "", addOns: [] }, catalog)).toContain("Package: Not sure, please recommend one");
   });
 
   it("encodes the body into an sms link", () => {

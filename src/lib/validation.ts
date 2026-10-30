@@ -14,7 +14,7 @@ export type BookingInput = {
   when: string;
   area: string;
   notes: string;
-  /** Honeypot — must stay empty. */
+  /** Honeypot: must stay empty. */
   company: string;
 };
 
@@ -85,7 +85,7 @@ export function composeMessage(
   input: BookingInput,
   catalog: { services: Named[]; addOns: Named[]; sizes: Sized[]; brand: string },
 ): string {
-  const service = catalog.services.find((s) => s.slug === input.service)?.name ?? "Not sure — please recommend one";
+  const service = catalog.services.find((s) => s.slug === input.service)?.name ?? "Not sure, please recommend one";
   const size = catalog.sizes.find((s) => s.id === input.size)?.label ?? "";
   const addOns = input.addOns
     .map((a) => catalog.addOns.find((x) => x.slug === a)?.name)

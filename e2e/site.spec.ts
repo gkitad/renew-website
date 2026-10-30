@@ -74,6 +74,27 @@ test("package CTA preselects the package in the booking form", async ({ page }) 
   await expect(page.getByRole("combobox", { name: "Package" })).toHaveValue("full-detail");
 });
 
+test("Interior Detail is listed first and marked Most popular", async ({ page }) => {
+  for (const path of ["/", "/services/"]) {
+    await page.goto(path);
+    const first = page.locator("main li").filter({ hasText: "Starting at" }).first();
+    await expect(first.getByRole("heading", { level: 3 })).toHaveText("Interior Detail");
+    await expect(first.getByText("Most popular")).toBeVisible();
+  }
+});
+
+test("business hours are the same everywhere", async ({ page }) => {
+  for (const path of ["/", "/contact/", "/faq/", "/services/full-detail/"]) {
+    await page.goto(path);
+    if (path === "/faq/") await page.getByText("What are your hours?").click();
+    const text = await page.locator("body").innerText();
+    expect(text, path).toContain("Monday – Saturday");
+    expect(text, path).toContain("8:00 AM – 8:00 PM");
+    expect(text, path).toContain("2:00 PM – 8:00 PM");
+    expect(text, path).not.toContain("to confirm");
+  }
+});
+
 test("contact page offers text and Instagram DM", async ({ page }) => {
   await page.goto("/contact/");
   await expect(page.locator('main a[href="sms:+15127752131"]').first()).toBeVisible();

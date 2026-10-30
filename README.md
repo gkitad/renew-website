@@ -1,4 +1,4 @@
-# Renew Mobile Car Detailing — website
+# Renew Mobile Car Detailing: website
 
 A multi-page, fully static website for Renew, a mobile car detailing service in North Austin, TX.
 Next.js 16 (App Router) + TypeScript + CSS Modules, exported to plain HTML/CSS/JS.
@@ -23,8 +23,8 @@ npm start            # serve ./out at http://localhost:3000
 ```bash
 npm run lint         # ESLint (next/core-web-vitals + TypeScript)
 npm run typecheck    # tsc --noEmit
-npm test             # Vitest — form validation & submission logic
-npm run build && npm run test:e2e   # Playwright — navigation, menu, FAQ, lightbox, form, axe WCAG 2.2 AA
+npm test             # Vitest: form validation & submission logic
+npm run build && npm run test:e2e   # Playwright: navigation, menu, FAQ, lightbox, form, axe WCAG 2.2 AA
 ```
 
 To test the form delivery paths, build with an endpoint and pass the same value to the tests
@@ -43,8 +43,8 @@ E2E_FORM_ENDPOINT=https://forms.example.test/estimate npm run test:e2e
 | Packages, prices by vehicle size, add-ons | `src/content/services.ts` |
 | Process steps, FAQ, principles, gallery projects, reviews | `src/content/pages.ts` |
 | Every image (swap photos here) | `src/content/assets.ts` |
-| Design tokens (colour, type, spacing, motion) | `src/app/globals.css` |
-| Fonts (self-hosted, OFL) | `src/app/fonts.ts`, `src/fonts/` |
+| Design tokens (white/black/gold palette, Montserrat type scale, spacing, motion) | `src/app/globals.css` |
+| Font: Montserrat (self-hosted, OFL) | `src/app/fonts.ts`, `src/fonts/` |
 | Booking form UI / validation / message / sending | `src/components/EstimateForm.tsx`, `src/lib/validation.ts`, `src/lib/submit.ts` |
 | Creative direction | `docs/CREATIVE_DIRECTION.md` |
 
@@ -52,15 +52,15 @@ Pages: `/`, `/services/`, `/services/[slug]/` (6), `/process/`, `/gallery/`, `/a
 
 ## Before launch (checklist)
 
-1. **Photography** — replace the sample images with Renew's own photos (see below) and add real
+1. **Photography**: replace the sample images with Renew's own photos (see below) and add real
    projects to `projects` in `src/content/pages.ts` (use `beforeAfter` only for true matched pairs).
-2. **Hours** — add `contact.hours` in `src/content/site.ts` if Renew wants to publish them.
-3. **Logo** — the header uses a text wordmark; replace `src/components/Wordmark.tsx` with the real logo SVG.
-4. **Copy** — review the About page (`src/app/about/page.tsx`, including the owner introduction) and the
+2. **Hours**: set in `contact.hours` (and `contact.openingHours` for search engines) in `src/content/site.ts`. Currently Monday to Saturday 8:00 AM to 8:00 PM, Sunday 2:00 PM to 8:00 PM.
+3. **Logo**: the header uses a text wordmark; replace `src/components/Wordmark.tsx` with the real logo SVG.
+4. **Copy**: review the About page (`src/app/about/page.tsx`, including the owner introduction) and the
    process/FAQ text in `src/content/pages.ts`.
-5. **Reviews** — add genuine reviews (with permission) to `testimonials`; the section appears automatically.
-6. **Domain** — set `NEXT_PUBLIC_SITE_URL` (canonical URLs, sitemap, social cards).
-7. **Go live** — set `launchReady: true` in `src/content/site.ts`. This removes the construction bar and
+5. **Reviews**: add genuine reviews (with permission) to `testimonials`; the section appears automatically.
+6. **Domain**: set `NEXT_PUBLIC_SITE_URL` (canonical URLs, sitemap, social cards).
+7. **Go live**: set `launchReady: true` in `src/content/site.ts`. This removes the construction bar and
    "to confirm" markers, hides unknown FAQ answers, allows search indexing, and adds LocalBusiness
    structured data.
 
@@ -73,7 +73,7 @@ All current images are licensed Unsplash photos (free for commercial use) and ar
 the business's work**; they are captioned "Sample photography" wherever that could be implied.
 To replace one, put the file in `public/images/`, then in `src/content/assets.ts` change its `src`
 to `/images/<file>`, update `width`/`height`/`alt` and set `sample: false`. Pre-size local photos
-(≈2400px long edge, WebP/JPEG ~80%) — the static export does not resize local files.
+(≈2400px long edge, WebP/JPEG ~80%): the static export does not resize local files.
 Unsplash images are resized on Unsplash's CDN by `src/lib/imageLoader.ts`.
 
 ## Booking form
@@ -90,6 +90,6 @@ Booking is by text or Instagram DM, so the form works **without any backend**:
 
 ## Deploy
 
-It is a static site — any static host works. Recommended: **Vercel** (import the Git repo; framework
+It is a static site: any static host works. Recommended: **Vercel** (import the Git repo; framework
 preset Next.js; add the two environment variables). Netlify/Cloudflare Pages: build command
 `npm run build`, publish directory `out`. `trailingSlash` is on, so every page is `/<page>/index.html`.

@@ -1,8 +1,8 @@
 /**
- * ASSET MANIFEST — every image on the site is referenced from here by key.
+ * ASSET MANIFEST: every image on the site is referenced from here by key.
  *
  * All current images are licensed sample photography from Unsplash
- * (https://unsplash.com/license — free for commercial use). They are NOT the
+ * (https://unsplash.com/license: free for commercial use). They are NOT the
  * business's own work, premises, staff or customer vehicles, and any place
  * where that could be implied captions them as "Sample photography".
  *

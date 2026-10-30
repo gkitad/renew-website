@@ -5,6 +5,7 @@ import { addOns } from "@/content/services";
 import { visibleServices } from "@/lib/content";
 import { EstimateForm } from "@/components/EstimateForm";
 import { Pending } from "@/components/Pending";
+import { Hours } from "@/components/Hours";
 import { Arrow } from "@/components/Icons";
 import s from "../inner.module.css";
 
@@ -75,17 +76,7 @@ export default function ContactPage() {
             <div>
               <dt className="micro">Hours</dt>
               <dd>
-                {contact.hours ? (
-                  <ul role="list">
-                    {contact.hours.map((h) => (
-                      <li key={h.days}>
-                        {h.days}: {h.time}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <Pending label="Hours" />
-                )}
+                <Hours compact />
               </dd>
             </div>
           </dl>

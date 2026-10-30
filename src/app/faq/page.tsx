@@ -11,7 +11,7 @@ import s from "../inner.module.css";
 
 export const metadata = pageMetadata({
   title: "FAQ",
-  description: "Booking, service area, choosing a package, vehicle sizes, pricing and aftercare — straight answers from Renew Mobile Car Detailing.",
+  description: "Booking, service area, choosing a package, vehicle sizes, pricing and aftercare. Straight answers from Renew Mobile Car Detailing.",
   path: "/faq/",
 });
 
@@ -35,7 +35,7 @@ export default function FaqPage() {
             Straight answers, <em>including “it depends.”</em>
           </>
         }
-        lead="Where the honest answer depends on the car, we say so — and explain what it depends on."
+        lead="Where the honest answer depends on the car, we say so and explain what it depends on."
       />
 
       <section className={s.tight} aria-label="Questions">

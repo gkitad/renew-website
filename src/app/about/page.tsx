@@ -33,7 +33,7 @@ export default function AboutPage() {
             Detailing as a craft, <em>brought to your driveway.</em>
           </>
         }
-        lead={`${site.brand.name} is a mobile detailing service based in North Austin. The idea is simple: your car, renewed — without you having to take it anywhere.`}
+        lead={`${site.brand.name} is a mobile detailing service based in North Austin. The idea is simple: your car, renewed, without you having to take it anywhere.`}
         image="steeringCloth"
         imageCaption="Hand finishing, interior"
       />

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { primaryCta } from "@/content/site";
 import { Plate } from "./Plate";
 import { Arrow } from "./Icons";
+import { Hours } from "./Hours";
 import type { AssetKey } from "@/content/assets";
 import styles from "./CtaBand.module.css";
 
@@ -20,7 +21,7 @@ export function CtaBand({
       Ready for a <em>renewed car?</em>
     </>
   ),
-  body = "Send the year, make and model, your vehicle size and the package you want — photos help. We’ll confirm the price and a time, then come to you.",
+  body = "Send the year, make and model, your vehicle size and the package you want. Photos help. We’ll confirm the price and a time, then come to you.",
   image = "detailerHeadlight",
   href = primaryCta.href,
 }: Props) {
@@ -40,6 +41,10 @@ export function CtaBand({
             <Link href="/process/" className="link-arrow">
               How it works <Arrow />
             </Link>
+          </div>
+          <div className={styles.hours}>
+            <p className="micro muted">Hours</p>
+            <Hours compact />
           </div>
         </div>
         <div className={styles.media} data-reveal>

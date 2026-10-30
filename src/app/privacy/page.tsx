@@ -45,7 +45,7 @@ export default function PrivacyPage() {
           <p>This website does not set advertising cookies. If analytics are added, this notice will be updated first.</p>
           <h2 className="h3">Your choices</h2>
           <p>
-            You can ask us to delete the information you sent at any time — just text{" "}
+            You can ask us to delete the information you sent at any time. Just text{" "}
             {site.contact.smsHref && site.contact.phone ? <a href={site.contact.smsHref}>{site.contact.phone}</a> : <Pending label="Phone" />}.
           </p>
           <p className="muted">Last updated: October 27, 2026</p>

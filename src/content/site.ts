@@ -1,5 +1,5 @@
 /**
- * SITE CONFIGURATION — the single place for business facts.
+ * SITE CONFIGURATION: the single place for business facts.
  *
  * Anything set to `null` is unknown and is NOT shown publicly. While
  * `launchReady` is false the site runs in "preview" mode: a thin notice bar is
@@ -26,7 +26,7 @@ export const site = {
   },
 
   serviceArea: "North Austin, TX" as string | null,
-  /** Mobile (we come to you), studio (you drop off), or both — drives some copy. */
+  /** Mobile (we come to you), studio (you drop off), or both: drives some copy. */
   serviceModel: "mobile" as "mobile" | "studio" | "both" | null,
 
   contact: {
@@ -36,8 +36,17 @@ export const site = {
     smsHref: `sms:${PHONE_E164}` as string | null,
     sms: true,
     email: null as string | null,
-    address: null as string | null, // mobile business — no customer-facing address
-    hours: null as { days: string; time: string }[] | null,
+    address: null as string | null, // mobile business: no customer-facing address
+    /** Shown in the footer, contact page, booking band and FAQ. */
+    hours: [
+      { days: "Monday – Saturday", time: "8:00 AM – 8:00 PM" },
+      { days: "Sunday", time: "2:00 PM – 8:00 PM" },
+    ] as { days: string; time: string }[] | null,
+    /** Same hours in schema.org format, for search engines. Keep in sync with `hours`. */
+    openingHours: [
+      { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "08:00", closes: "20:00" },
+      { dayOfWeek: ["Sunday"], opens: "14:00", closes: "20:00" },
+    ],
   },
 
   social: [
@@ -48,10 +57,10 @@ export const site = {
   dmHref: "https://ig.me/m/renew.cardetailing",
 
   seo: {
-    defaultTitle: "Renew Mobile Car Detailing — North Austin, TX",
+    defaultTitle: "Renew Mobile Car Detailing | North Austin, TX",
     titleTemplate: "%s · Renew Mobile Car Detailing",
     description:
-      "Mobile car detailing in North Austin. Express, interior and full detail packages priced by vehicle size — we come to you. Book by text or Instagram DM.",
+      "Mobile car detailing in North Austin. Express, interior and full detail packages priced by vehicle size. We come to you. Book by text or Instagram DM.",
     /** Overridden by NEXT_PUBLIC_SITE_URL at build time. */
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://renew-website-three.vercel.app",
     locale: "en_US",

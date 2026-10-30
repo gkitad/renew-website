@@ -11,7 +11,7 @@ import s from "../inner.module.css";
 
 export const metadata = pageMetadata({
   title: "How it works",
-  description: "How booking a mobile detail with Renew works — from a text or DM to a renewed car, and what we need from you.",
+  description: "How booking a mobile detail with Renew works, from a text or DM to a renewed car, and what we need from you.",
   path: "/process/",
 });
 
@@ -69,7 +69,7 @@ export default function ProcessPage() {
             </h2>
           </div>
           <ul role="list" className={s.ticks}>
-            <li>Year, make and model — and which size it is: sedan / coupe, SUV / crossover, or 3-row SUV / truck</li>
+            <li>Year, make and model, and which size it is: sedan / coupe, SUV / crossover, or 3-row SUV / truck</li>
             <li>The package you want, and any add-ons</li>
             <li>Photos of the interior and any problem areas: stains, pet hair, cloudy headlights</li>
             <li>Where the car will be parked, and a day and time that work for you</li>

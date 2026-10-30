@@ -4,7 +4,8 @@ import { Arrow } from "./Icons";
 import styles from "./PackageChooser.module.css";
 
 /**
- * Three packages side by side with a vehicle-size switch.
+ * Package cards with a vehicle-size switch. The featured ("most popular") package
+ * comes first and is set as a black card with gold details.
  * The switch is pure HTML/CSS (radio inputs + :has), so it works without JavaScript.
  */
 export function PackageChooser({ items, id = "pkg" }: { items: Service[]; id?: string }) {
@@ -27,7 +28,7 @@ export function PackageChooser({ items, id = "pkg" }: { items: Service[]; id?: s
 
       <ol role="list" className={styles.packages}>
         {items.map((s, i) => (
-          <li key={s.slug} className={`${styles.pkg} ${s.popular ? styles.popular : ""}`} data-reveal style={{ ["--reveal-delay" as string]: `${i * 90}ms` }}>
+          <li key={s.slug} className={`${styles.pkg} ${s.popular ? `${styles.popular} on-ink` : ""}`} data-reveal style={{ ["--reveal-delay" as string]: `${i * 90}ms` }}>
             <div className={styles.head}>
               <p className={`num ${styles.n}`}>
                 {String(i + 1).padStart(2, "0")}
@@ -54,7 +55,7 @@ export function PackageChooser({ items, id = "pkg" }: { items: Service[]; id?: s
               </ul>
             </div>
             <div className={styles.actions}>
-              <Link href={`/contact/?service=${s.slug}`} className={`btn ${s.popular ? "" : "btn--ghost"} ${styles.book}`}>
+              <Link href={`/contact/?service=${s.slug}`} className={`btn ${s.popular ? "btn--gold" : "btn--ghost"} ${styles.book}`}>
                 Book {s.name}
               </Link>
               <Link href={`/services/${s.slug}/`} className="link-arrow">

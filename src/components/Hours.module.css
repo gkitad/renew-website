@@ -1,0 +1,30 @@
+.hours {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+.row dt {
+  font-weight: 500;
+}
+.row dd {
+  color: var(--stone-600);
+}
+:global(.on-ink) .row dd {
+  color: var(--on-ink-muted);
+}
+.compact {
+  gap: 0.15rem;
+  font-size: var(--fs-small);
+}
+.compact .row {
+  justify-content: flex-start;
+}
+.compact .row dt::after {
+  content: ":";
+}

@@ -9,7 +9,7 @@ import { site } from "./site";
 export const principles = [
   {
     title: "Look before touching",
-    body: "Every car is different. Its size and condition decide the time and products it needs — not a stopwatch.",
+    body: "Every car is different. Its size and condition decide the time and products it needs, not a stopwatch.",
   },
   {
     title: "The right product for each surface",
@@ -17,7 +17,7 @@ export const principles = [
   },
   {
     title: "Straight answers",
-    body: "If a stain is permanent or something needs an add-on, you’ll hear it before the work starts — not after.",
+    body: "If a stain is permanent or something needs an add-on, you’ll hear it before the work starts, not after.",
   },
 ];
 
@@ -34,7 +34,7 @@ export const processSteps = [
   },
   {
     title: "Pick a time and place",
-    body: "We’re mobile — we agree a day, a time and where the car will be parked, and come to you.",
+    body: "We’re mobile. We agree on a day, a time and where the car will be parked, and come to you.",
     customer: "Make sure the car is accessible at the agreed time.",
   },
   {
@@ -44,7 +44,7 @@ export const processSteps = [
   },
   {
     title: "The detail",
-    body: "The package is carried out in order — interior top to bottom, exterior from pre-wash to protection.",
+    body: "The package is carried out in order: interior top to bottom, exterior from pre-wash to protection.",
     customer: "Nothing. Go about your day.",
   },
   {
@@ -68,7 +68,7 @@ export const faqs: FaqGroup[] = [
       {
         q: "Do you come to me?",
         a: site.serviceArea
-          ? `Yes — Renew is fully mobile. We serve ${site.serviceArea} and nearby areas. If you’re just outside, ask; it may still be possible.`
+          ? `Yes. Renew is fully mobile. We serve ${site.serviceArea} and nearby areas. If you’re just outside, ask; it may still be possible.`
           : null,
       },
       {
@@ -82,7 +82,7 @@ export const faqs: FaqGroup[] = [
     items: [
       {
         q: "Which package should I choose?",
-        a: "Express In & Out is for regular upkeep: a quick interior refresh and a complete exterior wash. Interior Detail is a deep clean of the cabin. Full Detail combines the Interior Detail with a careful exterior wash, wheels, trim and longer-lasting paint protection. Not sure? Send photos and we’ll recommend one.",
+        a: "Interior Detail, our most popular package, is a deep clean of the whole cabin. Express In & Out is for regular upkeep: a quick interior refresh and a complete exterior wash. Full Detail combines the Interior Detail with a careful exterior wash, wheels, trim and longer-lasting paint protection. Not sure? Send photos and we’ll recommend one.",
       },
       {
         q: "Which vehicle size am I?",
@@ -90,7 +90,7 @@ export const faqs: FaqGroup[] = [
       },
       {
         q: "Why are prices “starting at”?",
-        a: "The starting price is set by vehicle size. A car with heavy soiling, lots of pet hair or strong odors takes more time, so the final quote depends on its condition — and some of that is covered by add-ons. You’ll know the price before we start.",
+        a: "The starting price is set by vehicle size. A car with heavy soiling, lots of pet hair or strong odors takes more time, so the final quote depends on its condition, and some of that is covered by add-ons. You’ll know the price before we start.",
       },
       {
         q: "Is the ceramic coating add-on for the paint?",

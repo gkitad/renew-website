@@ -44,14 +44,13 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--gold);
 }
 .title {
   grid-area: title;
   font-size: var(--fs-h3);
-  font-weight: 560;
+  font-weight: 600;
   line-height: 1.25;
-  font-variation-settings: "wdth" 96;
 }
 .title::before {
   counter-increment: step;
@@ -100,4 +99,22 @@
   .n {
     margin: 0 0 var(--s-3);
   }
+}
+
+/* Dark-section variant */
+:global(.on-ink) .step::before {
+  background: var(--line-ink-strong);
+}
+:global(.on-ink) .step:last-child::before {
+  background: linear-gradient(90deg, var(--line-ink-strong), transparent);
+}
+:global(.on-ink) .n {
+  border-color: var(--gold);
+  background: var(--ink);
+}
+:global(.on-ink) .title::before {
+  color: var(--accent-bright);
+}
+:global(.on-ink) .body {
+  color: var(--on-ink-muted);
 }
