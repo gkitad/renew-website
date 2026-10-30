@@ -18,13 +18,12 @@
 :global(.on-ink) .row dd {
   color: var(--on-ink-muted);
 }
+/* Compact: day range above its hours, so narrow columns never wrap mid-line. */
 .compact {
-  gap: 0.15rem;
+  gap: 0.6rem;
   font-size: var(--fs-small);
 }
 .compact .row {
-  justify-content: flex-start;
-}
-.compact .row dt::after {
-  content: ":";
+  display: grid;
+  gap: 0.1rem;
 }

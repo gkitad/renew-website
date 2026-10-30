@@ -14,7 +14,7 @@ export function Footer() {
     <footer className={`on-ink ${styles.footer}`}>
       <div className={`wrap ${styles.top}`}>
         <div className={styles.intro}>
-          <Wordmark tone="paper" />
+          <Wordmark tone="paper" size="lg" />
           <p className={`muted ${styles.tagline}`}>
             Mobile car detailing in North Austin. We come to you.
           </p>

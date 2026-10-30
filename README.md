@@ -55,7 +55,7 @@ Pages: `/`, `/services/`, `/services/[slug]/` (6), `/process/`, `/gallery/`, `/a
 1. **Photography**: replace the sample images with Renew's own photos (see below) and add real
    projects to `projects` in `src/content/pages.ts` (use `beforeAfter` only for true matched pairs).
 2. **Hours**: set in `contact.hours` (and `contact.openingHours` for search engines) in `src/content/site.ts`. Currently Monday to Saturday 8:00 AM to 8:00 PM, Sunday 2:00 PM to 8:00 PM.
-3. **Logo**: the header uses a text wordmark; replace `src/components/Wordmark.tsx` with the real logo SVG.
+3. **Logo**: done. The official script mark is vectorized in `public/brand/` (black and white versions; original in `docs/renew-logo-original.jpg`).
 4. **Copy**: review the About page (`src/app/about/page.tsx`, including the owner introduction) and the
    process/FAQ text in `src/content/pages.ts`.
 5. **Reviews**: add genuine reviews (with permission) to `testimonials`; the section appears automatically.

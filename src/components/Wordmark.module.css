@@ -1,44 +1,34 @@
-/* Text wordmark until the real logo file is supplied: RENEW in Montserrat with the brand's gold sparkle. */
+/* Official logo: script mark with the descriptor centred underneath. */
 .mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.15rem;
   line-height: 1;
   color: var(--ink);
-  white-space: nowrap;
 }
 .paper {
   color: var(--on-ink);
 }
-.primary {
-  position: relative;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 1.15rem;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  padding-right: 0.5rem;
-}
-.spark {
-  position: absolute;
-  top: -0.45rem;
-  right: -0.35rem;
-  width: 0.6rem;
-  height: 0.6rem;
-  fill: var(--gold);
+.script {
+  width: 9.5rem;
+  height: auto;
 }
 .secondary {
-  padding-left: 0.85rem;
-  border-left: 1px solid var(--line-gold);
-  font-size: 0.55rem;
-  font-weight: 600;
-  line-height: 1.45;
-  letter-spacing: 0.26em;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  max-width: 7.5rem;
-  white-space: normal;
-  color: var(--stone-600);
+  white-space: nowrap;
+  padding-left: 0.2em; /* optically centre the tracked caps */
 }
-.paper .secondary {
-  color: var(--on-ink-muted);
+.lg .script {
+  width: 12.5rem;
+}
+.lg .secondary {
+  font-size: 0.6rem;
+}
+@media (max-width: 23rem) {
+  .script {
+    width: 8rem;
+  }
 }
